@@ -11,7 +11,7 @@ export type Site = {
   scheduledPostMargin: number;
   showArchives?: boolean;
   showBackButton?: boolean;
-  editPost: { // 注意：这里的问号已经被去掉了！
+  editPost: {
     enabled: boolean;
     text: string;
     url: string;
@@ -21,3 +21,32 @@ export type Site = {
   lang?: string;
   timezone?: string;
 };
+
+export type SocialMedia =
+  | "Github"
+  | "Facebook"
+  | "Instagram"
+  | "LinkedIn"
+  | "Mail"
+  | "X"
+  | "Twitch"
+  | "YouTube"
+  | "WhatsApp"
+  | "Snapchat"
+  | "Pinterest"
+  | "TikTok"
+  | "CodePen"
+  | "Discord"
+  | "GitLab"
+  | "Reddit"
+  | "Skype"
+  | "Steam"
+  | "Telegram"
+  | "Mastodon";
+
+export type SocialObjects = {
+  name: SocialMedia;
+  href: string;
+  active: boolean;
+  linkTitle: string;
+}[];
