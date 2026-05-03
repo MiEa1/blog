@@ -1,23 +1,161 @@
-export const SITE = {
-  website: "https://govfucker.vercel.app/", // 部署前可以先填入你预期的Vercel域名，或者暂时保留原样
-  author: "你的名字或昵称", // 例如："张三"
-  profile: "https://bpmiea.com", // 如果没有可以留空 ""
-  desc: "这里写一段你的博客简介，比如：分享关于技术、生活和阅读的思考。", // 搜索引擎抓取时会显示这段话
-  title: "你的博客名字", // 例如："张三的数字花园"
+import type { Site, SocialObjects } from "./types";
+
+export const SITE: Site = {
+  website: "https://blog-azure-six-74.vercel.app/",
+  author: "Besphire Miea", 
+  profile: "https://bpmiea.com", 
+  desc: "This is a test site.", 
+  title: "Blog", 
   ogImage: "astropaper-og.jpg",
-  lightAndDarkMode: true, // 是否开启明暗主题切换
-  postPerIndex: 4, // 首页显示的文章数量
-  postPerPage: 4, // 归档/列表页每页显示的文章数量
+  lightAndDarkMode: true,
+  postPerIndex: 4,
+  postPerPage: 4, 
   scheduledPostMargin: 15 * 60 * 1000, 
   showArchives: true,
   showBackButton: true, 
   editPost: {
-    enabled: false, // 建议新手先改为 false（关闭“在Github编辑此页”的功能），等熟悉Github后再开启
+    enabled: true, 
     text: "Edit page",
-    url: "https://github.com/你的用户名/你的仓库名/edit/main/",
+    url: "https://github.com/miea1/blog/edit/main/",
   },
   dynamicOgImage: true,
   dir: "ltr", 
-  lang: "zh-CN", // 如果你主要用中文写作，强烈建议改为 "zh-CN"
-  timezone: "Asia/Tokyo", // 根据你所在的时区修改，如果在国内就写 "Asia/Shanghai"，如果在日本就是 "Asia/Tokyo"
+  lang: "zh-CN", 
+  timezone: "Asia/Tokyo", 
 } as const;
+
+export const LOCALE = {
+  lang: "zh",
+  langTag: ["zh-CN"],
+} as const;
+
+export const LOGO_IMAGE = {
+  enable: false,
+  svg: true,
+  width: 216,
+  height: 46,
+};
+
+// 社交链接配置，已只保留 Telegram 和邮箱
+export const SOCIALS: SocialObjects = [
+  {
+    name: "Github",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: ` ${SITE.title} on Github`,
+    active: false,
+  },
+  {
+    name: "Facebook",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on Facebook`,
+    active: false,
+  },
+  {
+    name: "Instagram",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on Instagram`,
+    active: false,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on LinkedIn`,
+    active: false,
+  },
+  {
+    name: "Mail",
+    href: "mailto:bpmiea@gmail.com", // 你的邮箱
+    linkTitle: `Send an email to ${SITE.title}`,
+    active: true, // 开启邮箱图标
+  },
+  {
+    name: "X",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on X`,
+    active: false,
+  },
+  {
+    name: "Twitch",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on Twitch`,
+    active: false,
+  },
+  {
+    name: "YouTube",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on YouTube`,
+    active: false,
+  },
+  {
+    name: "WhatsApp",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on WhatsApp`,
+    active: false,
+  },
+  {
+    name: "Snapchat",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on Snapchat`,
+    active: false,
+  },
+  {
+    name: "Pinterest",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on Pinterest`,
+    active: false,
+  },
+  {
+    name: "TikTok",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on TikTok`,
+    active: false,
+  },
+  {
+    name: "CodePen",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on CodePen`,
+    active: false,
+  },
+  {
+    name: "Discord",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on Discord`,
+    active: false,
+  },
+  {
+    name: "GitLab",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on GitLab`,
+    active: false,
+  },
+  {
+    name: "Reddit",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on Reddit`,
+    active: false,
+  },
+  {
+    name: "Skype",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on Skype`,
+    active: false,
+  },
+  {
+    name: "Steam",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on Steam`,
+    active: false,
+  },
+  {
+    name: "Telegram",
+    href: "https://t.me/bpmiea", // 你的 Telegram 链接
+    linkTitle: `${SITE.title} on Telegram`,
+    active: true, // 开启 Telegram 图标
+  },
+  {
+    name: "Mastodon",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on Mastodon`,
+    active: false,
+  },
+];
